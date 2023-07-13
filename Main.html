@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+        integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-color/2.1.2/jquery.color.plus-names.js"
+        integrity="sha512-yn7sulUNeq9tX1NbaYmbs480YKctCH/obJgCADtR+X7ZAovAubPjd1wcnhebY9Tx5U4S16aOAhmqv2mv3IUWOw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"
+        integrity="sha512-xq+0+dRhI6SZOh+lDnMJEju2p2YPINflJLcYrRAsIMaXnJi6/V3lppCMCYsB2MLeF2E93r+fVo0MioY90pNzpw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/egjs-jquery-transform/2.0.0/transform.js"
+        integrity="sha512-uiZweypvichISjVUC5wiGpSLXrxVQIenHK6TczPY5hIFo10FxF33oSdG+JhC9+lE9Nnx61G13xGBxnWXOPOWjA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="style copy.css">
+    <style type="text/css">
+        #add div {
+            background-color: var(--purpl);
+            border-radius: 1000px;
+            box-shadow: 20px 20px 0px 0px rgb(0, 0, 0, 0.1);
+        }
+        #sub div{
+            background-color: var(--ble);
+            box-shadow: 0px 0px 20px 0px rgb(0, 0, 0, 0.1);
+        }
+        section {
+            gap: 20px;
+            max-height: fit-content;
+        }
+
+        div {
+            width: 70vw;
+            height: 10vh;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: all 500ms cubic-bezier(0, .62, .53, 1.28);
+        }
+
+        div:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 0px 0px 15px rgba(255, 255, 255);
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body style="padding-top:10vh;position: absolute;top:0;left:0vw;">
+    <section id="add" style="position: absolute;top:10vh;left:0;">
+        <h1>Welcome, Christie!</h1>
+        <a href="Addition/Zero.html">
+            <div>
+                <h2>Addition(#0)</h2>
+                <p>A short review and randomized test</p>
+            </div>
+        </a>
+        <a href="Addition/One.html">
+            <div>
+                <h2>Addition(#1)</h2>
+                <p>A short review and randomized test</p>
+            </div>
+        </a>
+        <a href="Addition/Two.html">
+            <div>
+                <h2>Addition(#2)</h2>
+                <p>A short review, Flashcards, and randomized test</p>
+            </div>
+        </a>
+        <a href="Addition/Three.html">
+            <div>
+                <h2>Addition(#3)</h2>
+                <p>A short review, Flashcards, and randomized test</p>
+            </div>
+        </a>
+        <a href="Addition/Four.html">
+            <div>
+                <h2>Addition(#4)</h2>
+                <p>Differntly styled Flashcards, A short review, and randomized test</p>
+            </div>
+        </a>
+        <a href="Addition/Five.html">
+            <div>
+                <h2>Addition(#5)</h2>
+                <p>Differntly styled Flashcards, A short review, and randomized test</p>
+            </div>
+        </a>
+        <a href="Addition/CommutAdd.html">
+            <div>
+                <h2>The Commutative Property(Addition)</h2>
+                <p>Yeah, you should learn about this before you continue</p>
+            </div>
+        </a>
+        <a href="Addition/Six.html">
+            <div>
+                <h2>Addition(#6)</h2>
+                <p>Differntly styled Flashcards, A short review, and randomized test</p>
+            </div>
+        </a>
+        <a href="Addition/Seven.html">
+            <div>
+                <h2>Addition(#7)</h2>
+                <p>Now we have better transitions, with the same things as #6</p>
+            </div>
+        </a>
+        <a href="Addition/Eight.html">
+            <div>
+                <h2>Addition(#8)</h2>
+                <p>Better transitions, with the same things as #7. Actually, most of the things here should be around
+                    the same</p>
+            </div>
+        </a>
+        <a href="Addition/Nine.html">
+            <div>
+                <h2>Addition(#9)</h2>
+            </div>
+        </a>
+        <a href="Addition/Ten.html">
+            <div>
+                <h2>Addition(#10)</h2>
+            </div>
+        </a>
+        <a href="Addition/Eleven.html">
+            <div>
+                <h2>Addition(#11)</h2>
+            </div>
+        </a>
+        <a href="Addition/Twelve.html">
+            <div>
+                <h2>Addition(#12)</h2>
+            </div>
+        </a>
+        </div>
+    </section>
+    <section style="position:absolute;top:10vh;left:100vw;background-color: var(--ble);" id="sub">
+        <h1>Welcome, Christie!</h1>
+        <div>
+            <h2>Subtraction(#0)</h2>
+        </div>
+        <div>
+            <h2>Subtraction(#1)</h2>
+        </div>
+        <div>
+            <h2>Subtraction(#2)</h2>
+        </div>
+        <div>
+            <h2>Subtraction(#3)</h2>
+        </div>
+        <div>
+            <h2>Subtraction(#4)</h2>
+        </div>
+        <div>
+            <h2>Subtraction(#5)</h2>
+        </div>
+        <div>
+            <h2>Subtraction(#6)</h2>
+        </div>
+        <div>
+            <h2>Subtraction(#7)</h2>
+        </div>
+        <div>
+            <h2>Subtraction(#8)</h2>
+        </div>
+        <div>
+            <h2>Subtraction(#9)</h2>
+        </div>
+        <div>
+            <h2>Subtraction(#10)</h2>
+        </div>
+        <div>
+            <h2>Subtraction(#11)</h2>
+        </div>
+        <div>
+            <h2>Subtraction(#12)</h2>
+        </div>
+        <div>
+            <h2>Things Subtraction Can't Do</h2>
+        </div>
+    </section>
+    <section style="position:absolute;top:10vh;left:200vw;background-color: var(--gren);" id="mult">
+        <h1>Welcome, Christie!</h1>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </section>
+
+    <header
+        style="width:100vw;height:10vh; display: flex; flex-direction: row; align-items: center; justify-content: center; position:fixed;top:0vh;gap:20px;background:var(--purpl);box-shadow: 0px 14px 20px 0px rgb(0, 0, 0, 0.1);">
+        <button style="color: black; background-color: white;" id="addButton">
+            <h2>Addition</h2>
+        </button>
+        <button style="color: black; background-color: white;" id="subButton">
+            <h2>Subtraction</h2>
+        </button>
+        <button style="color: black; background-color: white;" id="multButton">
+            <h2>Multiplication</h2>
+        </button>
+    </header>
+
+    <script>
+        var add = $("#add");
+        var sub = $("#sub");
+        var mult = $("#mult");
+        var subSVG=$("#subSVG");
+        $("#addButton").click(function () {
+            add.animate(
+                {
+                    left: "0vw"
+                }
+            );
+            sub.animate(
+                {
+                    left: "100vw"
+                }
+            );
+            subSVG.animate(
+                {
+                    left: "100vw"
+                }
+            );
+            mult.animate(
+                {
+                    left: "200vw"
+                }
+            );
+            $("header").animate(
+                {
+                    top: "-20vh"
+                }
+            );
+            $("header").css(
+                {
+                    background: "var(--purpl)"
+                }
+            );
+            $("header").animate(
+                {
+                    top: "0vh"
+                }
+            );
+        });
+
+
+        $("#subButton").click(function () {
+            add.animate(
+                {
+                    left: "-100vw"
+                }
+            );
+            sub.animate(
+                {
+                    left: "0vw"
+                }
+            );
+            subSVG.animate(
+                {
+                    left: "0vw"
+                }
+            );
+            mult.animate(
+                {
+                    left: "100vw"
+                }
+            );
+
+            $("header").animate(
+                {
+                    top: "-20vh"
+                }
+            );
+            $("header").css(
+                {
+                    background: "var(--ble)"
+                }
+            );
+            $("header").animate(
+                {
+                    top: "0vh"
+                }
+            );
+        });
+        $("#multButton").click(function () {
+            add.animate(
+                {
+                    left: "-200vw"
+                }
+            );
+            sub.animate(
+                {
+                    left: "-100vw"
+                }
+            );
+            subSVG.animate(
+                {
+                    left: "-100vw"
+                }
+            );
+            mult.animate(
+                {
+                    left: "0vw"
+                }
+            );
+
+            $("header").animate(
+                {
+                    top: "-20vh"
+                }
+            );
+            $("header").css(
+                {
+                    background: "var(--gren)"
+                }
+            );
+            $("header").animate(
+                {
+                    top: "0vh"
+                }
+            );
+        });
+
+
+    </script>
+</body>
+
+</html>
