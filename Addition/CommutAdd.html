@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+        integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-color/2.1.2/jquery.color.plus-names.js"
+        integrity="sha512-yn7sulUNeq9tX1NbaYmbs480YKctCH/obJgCADtR+X7ZAovAubPjd1wcnhebY9Tx5U4S16aOAhmqv2mv3IUWOw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"
+        integrity="sha512-xq+0+dRhI6SZOh+lDnMJEju2p2YPINflJLcYrRAsIMaXnJi6/V3lppCMCYsB2MLeF2E93r+fVo0MioY90pNzpw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        p{
+            font-size:1.5em;
+        }
+        section:nth-child(odd){
+            background-color: var(--purpl);
+        }
+        section:nth-child(even){
+            background-color: var(--dpurpl)
+        }
+        section div{
+            display: inherit;
+            flex-direction: row;
+            gap:2vw;
+        }
+        section div div{
+            display: inherit;
+            flex-direction: column;
+            width:50vw;
+        }
+        .image{
+            display: inherit;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width:25vw;
+            padding:10px;
+            height:25vh;
+            background-color: white;
+            border: solid 10px rgb(204,204,204);
+            border-radius: 50px;
+        }
+        footer{
+            display: flex;
+            flex-direction: row;
+            gap:2vw;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+        }
+        .image h1, .image p{
+            color:black;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>The <u>Commutative Property</u> of Addition</h1>
+    </section>
+    <section class="white">
+        <div>
+            <div>
+                <h2>What is 3 + 2?</h2>
+                <p style="font-size: 1.5em;">It's 5, right? Well, you are right, and no one should tell you anything different. For example if you had 3 apples, and 2 oranges, you would have FIVE fruits.
+                </p>
+                <p>
+                    So, 3 + 2 = 5<br>
+                    But what if we reverse the equation, like to the side?    
+                </p>
+            </div>
+            <div class="image">
+                <h1>2 + 3?</h1>
+                <p>What is it?</p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div>
+            <div class="image">
+                <h1>2 + 3 = 5?</h1>
+                <p>Really?</p>
+            </div>
+            <div>
+
+                <h2>What is 2 + 3?</h2>
+                <p>It's also 5? This can't be...<br>
+                    Go use a calculator and find out what 2 + 3 is<br>
+                    Oh. It is 5.
+                </p>
+                <p>
+                    So, 2 + 3 is also 5<br>
+                    But there is something you should notice. Do you see it?
+                </p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div>
+            <div>
+
+                <h2>They're made of the same numbers!</h2>
+                <p>Yes they are. Both equations use the numbers 2, 3, and 5!</p>
+                <p>So, 2 + 3, and 3 + 2, equal the same thing.</p>
+            </div>
+            <div class="image">
+                <h1>2 + 3 = 3 + 2</h1>
+                <p>It's true!</p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div>
+            <div class="image">
+                <h1>5 + 6 = 6 + 5</h1>
+                <h1>7 + 9 = 9 + 7</h1>
+                <p>Commutative Property</p>
+            </div>
+            <div>
+                <h2>The Commutative Property</h2>
+                <p>That was an example of the Commutative Property of Addition. This property states that if you switch the addends(numbers you are adding), in the equation, you will have the same answer. End of story, now learn your 6 addition tables!</p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <h2>Karllr 2020 - 2023</h2>
+        <p>Scroll to top your self</p>
+    </footer>
+</body>
+</html>

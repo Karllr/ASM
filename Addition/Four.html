@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+        integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-color/2.1.2/jquery.color.plus-names.js"
+        integrity="sha512-yn7sulUNeq9tX1NbaYmbs480YKctCH/obJgCADtR+X7ZAovAubPjd1wcnhebY9Tx5U4S16aOAhmqv2mv3IUWOw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"
+        integrity="sha512-xq+0+dRhI6SZOh+lDnMJEju2p2YPINflJLcYrRAsIMaXnJi6/V3lppCMCYsB2MLeF2E93r+fVo0MioY90pNzpw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/egjs-jquery-transform/2.0.0/transform.js"
+        integrity="sha512-uiZweypvichISjVUC5wiGpSLXrxVQIenHK6TczPY5hIFo10FxF33oSdG+JhC9+lE9Nnx61G13xGBxnWXOPOWjA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #player {
+            background: white;
+            width: 100px;
+            height: 100px;
+            border-radius: 1000px;
+        }
+
+        #GameScreen {
+            width: 50vw;
+            height: 50vh;
+            background-color: var(--dpurpl);
+        }
+
+        #Flashcards {
+            flex-direction: row;
+        }
+
+        .flashcard {
+            left: 10vw;
+        }
+
+        #answerSpace {
+            position: absolute;
+            top: 0px;
+            left: 50vw;
+            width: 50%;
+            height: 100vh;
+            background-color: var(--dpurpl);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px
+        }
+
+        @media (max-width:880px) {
+            .flashcard {
+                left: 35vw;
+                top: 10vh;
+            }
+
+            #answerSpace {
+                position: absolute;
+                top: 50vh;
+                left: 0;
+                width: 100vw;
+                height: 50vh;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section id="start">
+        <div id="startAnim"
+            style="display: flex; flex-direction: inherit;align-items: inherit; justify-content: inherit;">
+            <h1>Addition(#4)</h1>
+            <button id="GameStart">
+                <h2>Let's Go!</h2>
+            </button>
+        </div>
+    </section>
+    <section id="Flashcards" style="display:none;position:absolute;left:-100vw;top:0px;opacity:0">
+        <div class="flashcard">
+            <h1>4 + 0</h1>
+        </div>
+        <div class="flashcard">
+            <h1>4 + 1</h1>
+        </div>
+        <div class="flashcard">
+            <h1>4 + 2</h1>
+        </div>
+        <div class="flashcard">
+            <h1>4 + 3</h1>
+        </div>
+        <div class="flashcard">
+            <h1>4 + 4</h1>
+        </div>
+        <div class="flashcard">
+            <h1>4 + 5</h1>
+        </div>
+        <div class="flashcard">
+            <h1>4 + 6</h1>
+        </div>
+        <div class="flashcard">
+            <h1>4 + 7</h1>
+        </div>
+        <div class="flashcard">
+            <h1>4 + 8</h1>
+        </div>
+        <div class="flashcard">
+            <h1>4 + 9</h1>
+        </div>
+        <div class="flashcard">
+            <h1>4 + 10</h1>
+        </div>
+        <div class="flashcard">
+            <h1>4 + 11</h1>
+        </div>
+        <div class="flashcard">
+            <h1>4 + 12</h1>
+        </div>
+
+        <div id="answerSpace">
+            <input type="text" id="flashAnswer">
+            <button id="submitFlash">
+                <h2>Done!</h2>
+            </button>
+            <div id="fin" style="display: none;">
+                <h1>You Win!</h1>
+                <button>
+                    <h2>Go on!</h2>
+                </button>
+            </div>
+        </div>
+    </section>
+    <section style="display: none;transform: scale(1);opacity:1" id="Review">
+        <h1>Ready?</h1>
+        <div class="grid">
+            <h1 class="fact">4 + 0 = <span class="invis">4</span></h1>
+            <h1 class="fact">4 + 1 = <span class="invis">5</span></h1>
+            <h1 class="fact">4 + 2 = <span class="invis">6</span></h1>
+            <h1 class="fact">4 + 3 = <span class="invis">7</span></h1>
+            <h1 class="fact">4 + 4 = <span class="invis">8</span></h1>
+            <h1 class="fact">4 + 5 = <span class="invis">9</span></h1>
+            <h1 class="fact">4 + 6 = <span class="invis">10</span></h1>
+            <h1 class="fact">4 + 7 = <span class="invis">11</span></h1>
+            <h1 class="fact">4 + 8 = <span class="invis">12</span></h1>
+            <h1 class="fact">4 + 9 = <span class="invis">13</span></h1>
+            <h1 class="fact">4 + 10 = <span class="invis">14</span></h1>
+            <h1 class="fact">4 + 11 = <span class="invis">15</span></h1>
+            <h1 class="fact">4 + 12 = <span class="invis">16</span></h1>
+        </div>
+        <button id="QuizStart">
+            <h2>Ready!</h2>
+        </button>
+    </section>
+    <section style="display: none;opacity: 0;transform: scale(0.9);" id="Quiz">
+        <h1>Answer the following, <em>without</em> a calculator</h1>
+        <h2>Your brain has the energy</h2>
+
+        <h2 class="determiner">4 + 0 <input type="text" class="answer"></h2>
+        <h2 class="determiner">4 + 1 <input type="text" class="answer"></h2>
+        <h2 class="determiner">4 + 2 <input type="text" class="answer"></h2>
+        <h2 class="determiner">4 + 3 <input type="text" class="answer"></h2>
+        <h2 class="determiner">4 + 4 <input type="text" class="answer"></h2>
+        <h2 class="determiner">4 + 5 <input type="text" class="answer"></h2>
+        <h2 class="determiner">4 + 6 <input type="text" class="answer"></h2>
+        <h2 class="determiner">4 + 7 <input type="text" class="answer"></h2>
+        <h2 class="determiner">4 + 8 <input type="text" class="answer"></h2>
+        <h2 class="determiner">4 + 9 <input type="text" class="answer"></h2>
+        <h2 class="determiner">4 + 10 <input type="text" class="answer"></h2>
+        <h2 class="determiner">4 + 11 <input type="text" class="answer"></h2>
+        <h2 class="determiner">4 + 12 <input type="text" class="answer"></h2>
+        <button class="submit">
+            <h2>Done!</h2>
+        </button>
+        <a href="../Main.html">
+            <button id="next" style="display: none;opacity: 0;">
+                <h2>Go Home!</h2>
+            </button>
+        </a>
+
+    </section>
+    <script>
+        var flashcards = $(".flashcard");
+        for (var i = 0; i < flashcards.length; i++) {
+            var target = Math.floor(Math.random() * flashcards.length - 1) + 1;
+            var target2 = Math.floor(Math.random() * flashcards.length - 1) + 1;
+            flashcards.eq(target).before(flashcards.eq(target2));
+
+        }
+        flashcards.length = 0;
+        flashcards = $(".flashcard");
+
+        var corrects = document.getElementsByClassName("correct");
+        var prepreanswer = flashcards[flashcards.length - 1].innerText;
+        var preanswer = prepreanswer.split("+");
+        var answer = Number(preanswer[0]) + Number(preanswer[1]);
+
+        var FlashAnswer = $("#flashAnswer");
+        $("#submitFlash").click(function () {
+            corrects = document.getElementsByClassName("correct");
+            prepreanswer = flashcards[flashcards.length - 1].innerText;
+            preanswer = prepreanswer.split("+");
+            answer = Number(preanswer[0]) + Number(preanswer[1]);
+
+            if (Number(FlashAnswer.val()) === answer) {
+                flashcards.eq(flashcards.length - 1).animate(
+                    {
+                        left: '-50%',
+                        transform: "rotate(0deg)scale(0.7)",
+                        backgroundColor: 'rgb(163, 255, 175);',
+                        borderColor: 'rgb(112, 255, 131)',
+                    },
+                    {
+                        duration: 500,
+                        queue: false,
+                    }
+                );
+                flashcards.splice(flashcards.length - 1, 1);
+                if (flashcards.length < 1) {
+                    $("#answerSpace").animate(
+                        {
+                            left: 0,
+                            top: 0,
+                            width: '100vw',
+                            height: '100vh'
+                        }
+                    );
+                    $("#fin").show();
+                    $("#fin").animate(
+                        {
+                            opacity: 1,
+                        }
+                    );
+                }
+            } else {
+                $(".flashcard").eq(flashcards.length - 1).animate(
+                    {
+                        backgroundColor: 'rgb(255, 145, 145)',
+                        borderColor: 'rgb(255, 103, 103)',
+                        transform: 'scale(1.1)rotate(5deg)'
+                    }, 250
+                );
+                $(".flashcard").eq(flashcards.length - 1).animate(
+                    {
+                        backgroundColor: 'rgb(255, 255,255)',
+                        borderColor: 'rgb(204,204,204)',
+                        transform: 'scale(1)rotate(0deg)'
+                    }, 250
+                );
+            }
+        });
+    </script>
+    <script>
+        function sceneChange(item, func) {
+            $(item).click(function () {
+                func();
+            });
+        }
+        function swift(start, end) {
+            $(start).hide();
+            $(end).show();
+        }
+        sceneChange("#GameStart", function () {
+            $("#startAnim").animate(
+                {
+                    left: "-=50vw",
+                    opacity: 0,
+                    transform: "rotate(-20deg)"
+                }, {
+                duration: 1000,
+                easing: "swing",
+                done: function () {
+                    swift("#start", "#Flashcards");
+                    $("#Flashcards").animate(
+                        {
+                            left: '0vw',
+                            opacity: 1
+                        }, 1000, "swing"
+                    );
+
+                }
+            }
+            );
+        });
+        sceneChange("#fin", function () {
+            $("#Flashcards").animate(
+                {
+                    transform: "scale(0.7)",
+                    opacity: 0
+                }, {
+                duration: 500,
+                easing: "swing",
+                queue: false,
+                done: function () {
+                    swift("#Flashcards", "#Review");
+                    $("#Review").animate(
+                        {
+                            transform: 'scale(1)',
+                            opacity: 1,
+                        }, {
+                        duration: 500,
+                        queue: false,
+                        easing: "swing"
+                    }
+                    );
+                }
+            }
+            );
+        });
+        sceneChange("#QuizStart", function () {
+            $("#Review").animate(
+                {
+                    transform: "scale(0.9)",
+                }
+            );
+            $("#Review").animate(
+                {
+                    transform: "scale(2)",
+                    opacity: 0,
+                },
+                {
+                    duration: 500,
+                    done: function () {
+                        $("#Review").hide();
+                        $("#Quiz").show();
+                        $("#Quiz").animate(
+                            {
+                                transform: "scale(1)",
+                                opacity: 1,
+                            }
+                        );
+                    }
+                }
+            );
+        });
+    </script>
+    <script>
+        var answers = [
+            '4',
+            '5',
+            '6',
+            '7',
+            '8',
+            '9',
+            '10',
+            '11',
+            '12',
+            '13',
+            '14',
+            '15',
+            '16',
+        ];
+        var answerGiven = $(".answer");
+        var questions = $(".determiner");
+        for (var i = 0; i < questions.length; i++) {
+            var target = Math.floor(Math.random() * questions.length - 1) + 1;
+            var target2 = Math.floor(Math.random() * questions.length - 1) + 1;
+            questions.eq(target).before(questions.eq(target2));
+        }
+        $(".submit").click(function () {
+            for (var i = 0; i < answerGiven.length; i++) {
+                if (answerGiven[i].value != '') {
+                    if (answerGiven[i].value === answers[i]) {
+                        questions[i].append("Yes");
+                    } else {
+                        questions[i].append("No");
+                    }
+                    $("#next").show();
+                    $("#next").animate(
+                        {
+                            opacity: 1,
+                        }
+                    );
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
